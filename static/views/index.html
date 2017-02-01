@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block title %}Your Trip{% endblock %}
+
+{% block content %}
+<h2>Index Page</h2>
+
+<div id=restaurant>
+  <select name="restaurants">
+    {% for restaurant in restaurants %}
+      <option value="{{restaurant.name}}">{{restaurant.name}}</option>
+    {% endfor %}
+  </select>
+</div>
+
+<div id=hotel>
+  <select name="hotels">
+    {% for hotel in hotels %}
+      <option value="{{hotel.name}}">{{hotel.name}}</option>
+    {% endfor %}
+  </select>
+</div>
+
+<div id=activity>
+  <select name="activities">
+    {% for activity in activities %}
+      <option value="{{activity.name}}">{{activity.name}}</option>
+    {% endfor %}
+  </select>
+</div>
+
+<!-- <div id=place>
+  {% for place in place %}
+    <option value="{{place.name}}">{{place.name}}</option>
+  {% endfor %}
+</div> -->
+
+
+{% endblock %}
