@@ -30,8 +30,13 @@ $addHotel.on('click', function(){
 $addRestaurant.on('click', function(){
   var restaurantSelector = document.getElementById('restaurant-choices');
   var restaurantHTML = restaurantSelector.options[restaurantSelector.selectedIndex].value;
-  const $newRestaurant = $('<span class="title">'+ restaurantHTML +'</span>');
-  $('#restaurant .itinerary-item button:last-child').before($newRestaurant);
+  const $newRestaurant = $(
+    '<div class="'+restaurantHTML+'">' +
+      '<span class="title">'+ restaurantHTML +'</span>' +
+      '<button class="btn btn-xs btn-danger remove btn-circle">x</button>' +
+    '</div>'
+  );
+  $('#restaurant .itinerary-item').after($newRestaurant);
   let restaurantPlace;
   for (let i = 0; i < restaurants.length; i++){
     if (restaurants[i].name === restaurantHTML){
